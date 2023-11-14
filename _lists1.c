@@ -38,7 +38,7 @@ char **list_to_strings(list_t *head)
 		return (NULL);
 	for (a = 0; node; node = node->next, a++)
 	{
-		str = malloc(_strlen(node->str) + 1);
+		str = malloc(_strlen(node->string) + 1);
 		if (!str)
 		{
 			for (b = 0; b < a; b++)
@@ -47,7 +47,7 @@ char **list_to_strings(list_t *head)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = _strcpy(str, node->string);
 		strs[a] = str;
 	}
 	strs[a] = NULL;
@@ -69,7 +69,7 @@ size_t print_list(const list_t *h)
 		_puts(convert_number(h->digit, 10, 0));
 		_putchar(':');
 		_putchar(' ');
-		_puts(h->str ? h->str : "(nil)");
+		_puts(h->string ? h->string : "(nil)");
 		_puts("\n");
 		h = h->next;
 		a++;
@@ -91,7 +91,7 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 
 	while (node)
 	{
-		b = starts_with(node->str, prefix);
+		b = starts_with(node->string, prefix);
 		if (b && ((c == -1) || (*b == c)))
 			return (node);
 		node = node->next;

@@ -1,27 +1,17 @@
 #include "shell.h"
 
-
 /**
-
  * is_chain - test if current char in buffer is a chain delimeter
-
  * @info: the parameter struct
-
  * @buf: the char buffer
-
  * @p: address of current position in buf
-
  *
-
  * Return: 1 if chain delimeter, 0 otherwise
-
  */
 
 int is_chain(info_t *info, char *buf, size_t *p)
-
 {
-
-        size_t a = *p;
+	size_t a = *p;
 
 
         if (buf[a] == '|' && buf[a + 1] == '|')
@@ -169,7 +159,7 @@ int replace_alias(info_t *info)
 
                 free(info->argv[0]);
 
-                p = _strchr(node->str, '=');
+                p = _strchr(node->string, '=');
 
                 if (!p)
 
@@ -252,7 +242,7 @@ int replace_vars(info_t *info)
 
                         replace_string(&(info->argv[a]),
 
-                                _strdup(_strchr(node->str, '=') + 1));
+                                _strdup(_strchr(node->string, '=') + 1));
 
                         continue;
 

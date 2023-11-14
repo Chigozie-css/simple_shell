@@ -66,7 +66,7 @@ int find_builtin(info_t *info)
         for (a = 0; builtintbl[a].type; a++)
                 if (_strcmp(info->argv[0], builtintbl[a].type) == 0)
                 {
-                        info->line_count++;
+                        info->lineCount++;
                         built_in_ret = builtintbl[a].func(info);
                         break;
                 }
@@ -85,7 +85,7 @@ void find_cmd(info_t *info)
         info->path = info->argv[0];
         if (info->linecount_flag == 1)
         {
-                info->line_count++;
+                info->lineCount++;
                 info->linecount_flag = 0;
         }
         for (a = 0, b = 0; info->arg[a]; a++)

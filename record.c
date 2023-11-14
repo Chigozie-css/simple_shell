@@ -86,7 +86,7 @@ int write_history(info_t *info)
 
         {
 
-                _putsfd(node->str, fd);
+                _putsfd(node->string, fd);
 
                 _putfd('\n', fd);
 
